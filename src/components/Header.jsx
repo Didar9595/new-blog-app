@@ -2,15 +2,17 @@
 import { Button, Navbar, TextInput } from "flowbite-react"
 import Link from "next/link"
 import { AiOutlineSearch } from "react-icons/ai";
-import {FaMoon} from 'react-icons/fa'
+import {FaMoon,FaSun} from 'react-icons/fa'
 import { usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
 
 const Header = () => {
   const path =usePathname();
+  const{theme,setTheme}=useTheme();
   return (
     <Navbar className="bg-slate-100 px-4">
         <Link href='/' className="flex flex-row items-center gap-2 font-bold text-lg sm:text-xl dark:text-white">
-          <span className="py-2 px-6 sm:px-2 bg-gradient-to-r from-pink-300 to-orange-400 rounded-lg">DA's</span>
+          <span className="py-2 px-6 sm:px-2 text-white bg-gradient-to-r from-pink-300 to-orange-400 rounded-lg">DA's</span>
           BlogSite
         </Link>
         <form>
@@ -29,8 +31,8 @@ const Header = () => {
           </Link>
         </Navbar.Collapse>
         <div className="flex gap-4">
-            <Button className="w-10" color="gray" pill>
-                <FaMoon/>
+            <Button className="w-14" color="gray" pill onClick={()=>setTheme(theme==='light'?'dark':'light')}>
+                {theme==='light'?<FaMoon/>:<FaSun/>}
             </Button>
             <Link href='/sign-in'>
               <Button gradientDuoTone="pinkToOrange" outline>Sign In</Button>

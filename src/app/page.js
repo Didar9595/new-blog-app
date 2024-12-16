@@ -1,6 +1,4 @@
-import { Button } from 'flowbite-react'
-import React from 'react'
-
+'use client'
 
 const page = () => {
   return (
