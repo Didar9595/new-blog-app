@@ -12,8 +12,7 @@ const Header = () => {
   return (
     <Navbar className="bg-slate-100 px-4">
         <Link href='/' className="flex flex-row items-center gap-2 font-bold text-lg sm:text-xl dark:text-white">
-          <span className="py-2 px-6 sm:px-2 text-white bg-gradient-to-r from-pink-300 to-orange-400 rounded-lg">DA's</span>
-          BlogSite
+          <img src="Logo.png" alt="Logo Image" className="w-[35%] rounded-md"/>
         </Link>
         <form>
             <TextInput type="text" placeholder="Search..." rightIcon={AiOutlineSearch} className="hidden lg:inline"/>
