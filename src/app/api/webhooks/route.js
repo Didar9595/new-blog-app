@@ -54,25 +54,26 @@ export async function POST(req) {
 
   if(eventType==='user.created'|| eventType==='user.updated'){
     const{id,first_name,last_name,image_url,email_addresses,username}=evt?.data;
-  }
-  try {
-    const user =await createOrUpdateUser(id,first_name,last_name,image_url,email_addresses,username)
-    if(user && eventType==='user.created'){
-      try {
-        await clerkClient.users.updateUserMetadata(id,{
-          publicMetadat:{
-            userMongoId:user._id,
-            isAdmin:user.isAdmin,
-          }
-        })
-      } catch (error) {
-        console.log("Error updating User Metadata",error)
+    try {
+      const user =await createOrUpdateUser(id,first_name,last_name,image_url,email_addresses,username)
+      if(user && eventType==='user.created'){
+        try {
+          await clerkClient.users.updateUserMetadata(id,{
+            publicMetadat:{
+              userMongoId:user._id,
+              isAdmin:user.isAdmin,
+            }
+          })
+        } catch (error) {
+          console.log("Error updating User Metadata",error)
+        }
       }
+    } catch (error) {
+      console.log("Error in updating or creating user",error)
+      return new Response("Error Occurred",{status:400})
     }
-  } catch (error) {
-    console.log("Error in updating or creating user",error)
-    return new Response("Error Occurred",{status:400})
   }
+  
 
   if(eventType==='user.deleted'){
     const {id}=evt?.data;
