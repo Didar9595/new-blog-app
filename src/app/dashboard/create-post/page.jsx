@@ -32,7 +32,7 @@ export default function Page(){
                             <Button gradientDuoTone="pinkToOrange" type="button" outline>Upload Image</Button>
                         </div>
                     </div>
-                    <ReactQuill theme="snow" placeholder="Enter your Text..." required className="h-72 p-3 mb-14" />
+                    <ReactQuill theme="snow" placeholder="Enter your Text..." required className="h-72 p-3 mb-14 text-white" />
                     <div className="p-3">
                         <Button gradientDuoTone="pinkToOrange" className="w-[100%] tracking-wider text-xl" type="submit">Post</Button>
                     </div>
