@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 const ReactQuill = dynamic(() => import('react-quill-new'), { ssr: false });
 import 'react-quill-new/dist/quill.snow.css'
 
-const page = () => {
+export default function Page(){
     const { isSignedIn, user, isLoaded } = useUser();
     if (!isLoaded) {
         return null;
@@ -46,5 +46,3 @@ const page = () => {
     }
 
 }
-
-export default page
