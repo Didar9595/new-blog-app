@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <Navbar className="bg-slate-100 h-[fit-content]">
       <Link href='/' className="font-bold text-lg sm:text-xl dark:text-white w-[25%] lg:w-[15%]">
-        <img src="Logo.png" alt="Logo Image" className="rounded-lg"/>
+        <img src="./Logo.png" alt="Logo Image" className="rounded-lg"/>
       </Link>
       <form>
         <TextInput type="text" placeholder="Search..." rightIcon={AiOutlineSearch} className="hidden lg:inline" />
