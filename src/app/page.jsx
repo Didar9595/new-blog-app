@@ -1,7 +1,6 @@
 import Link from "next/link";
 import PostCard from "./components/PostCard";
 import { Button } from "flowbite-react";
-import { FaLongArrowAltRight } from "react-icons/fa";
 
 export default async function page() {
   let posts = null;
