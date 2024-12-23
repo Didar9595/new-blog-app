@@ -21,7 +21,7 @@ export default function FooterComp() {
             <div>
               <Footer.Title title="Follow us" />
               <Footer.LinkGroup col>
-                <Footer.Link href="#">Github</Footer.Link>
+                <Footer.Link href="/#">Github</Footer.Link>
                 <Footer.Link href="#">Discord</Footer.Link>
               </Footer.LinkGroup>
             </div>
