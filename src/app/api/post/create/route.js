@@ -9,7 +9,7 @@ export const POST=async(req)=>{
         const data=await req.json();
         console.log("User",user.publicMetadata)
         console.log("Data",data);
-        if(!user||user.publicMetadata.userMongoId!==data.userMongoId || user.publicMetadata.isAdmin!==true){
+        if(!user||user.publicMetadata.userMongoId!==data.userMongoId){
             return new Response("Unauthorized",{status:401});
         }
         const slug=data.title.split(" ").join('-').toLowerCase().replace(/[^a-zA-Z0-9-]/g,'');

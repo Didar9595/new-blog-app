@@ -1,3 +1,4 @@
+import RecentPosts from '@/app/components/RecentPosts';
 import { Button } from 'flowbite-react';
 import Link from 'next/link';
 import React from 'react'
@@ -22,8 +23,8 @@ export default async function page({params}) {
         )
     }
   return (
-    <div className='flex flex-col items-center p-4 lg:p-20 gap-3'>
-      <h1 className='font-extrabold text-lg lg:text-2xl'>{post && post.title}</h1>
+    <div className='flex flex-col items-center p-4 lg:p-20 gap-8 dark:text-white'>
+      <h1 className='font-extrabold text-lg lg:text-2xl text-center'>{post && post.title}</h1>
       <Link href={`/search?category=${post && post.category}`} ><Button className='w-[100%] lg:w-[120%] capitalize' outline gradientDuoTone='pinkToOrange'>{post && post.category}</Button></Link>
       <img src={post && post.image} alt={post && post.title} width={400}/>
       <div className='w-[100%] lg:w-[70%] flex flex-row justify-between'>
@@ -31,6 +32,7 @@ export default async function page({params}) {
         <span className='text-orange-400'>{post && (post?.content?.length/1000).toFixed(0)} mins read</span>
       </div>
       <div dangerouslySetInnerHTML={{__html:post?.content}} className='w-[100%] lg:w-[70%]'></div>
+      <RecentPosts limit={5}/>
     </div>
   )
 }

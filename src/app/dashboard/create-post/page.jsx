@@ -90,7 +90,7 @@ export default function Page() {
     if (!isLoaded) {
         return <div>Loading...</div>;
     }
-    if (isSignedIn && user?.publicMetadata?.isAdmin) {
+    if (isSignedIn) {
         return (
             <div className="flex justify-center items-center">
                 <div className="border my-5 w-[90%] lg:w-[50%] shadow-lg rounded-lg min-h-screen">
