@@ -1,4 +1,4 @@
-import Post from "@/lib/models/post.model";
+import NewPosts from "@/lib/models/post.model";
 import {connect} from "@/lib/mongodb/mongoose"
 
 export const POST=async(req)=>{
@@ -8,7 +8,7 @@ export const POST=async(req)=>{
         const startIndex=parseInt(data.startIndex)||0;
         const limit=parseInt(data.limit)||9;
         const sortDirection=data.order==='asc'?1:-1;
-        const posts=await Post.find({
+        const posts=await NewPosts.find({
             ...(data.userId && {userId:data.userId}),
             ...(data.category && {category:data.category}),
             ...(data.slug && {slug:data.slug}),
@@ -20,7 +20,7 @@ export const POST=async(req)=>{
                 ],
             }),
         }).sort({updatedAt:sortDirection}).skip(startIndex).limit(limit)
-        const totalPosts=await Post.countDocuments();
+        const totalPosts=await NewPosts.countDocuments();
         const now= new Date();
 
         const oneMonthAgo=new Date(
@@ -29,7 +29,7 @@ export const POST=async(req)=>{
             now.getDate()
         );
 
-        const lastMonthPosts=await Post.countDocuments({
+        const lastMonthPosts=await NewPosts.countDocuments({
             createdAt:{$gte:oneMonthAgo},
         });
         return new Response(JSON.stringify({posts,totalPosts,lastMonthPosts}),{

@@ -1,5 +1,10 @@
 import mongoose from "mongoose";
 
+
+//if (mongoose.models.Post) {
+ //   delete mongoose.models.Post;
+//  }
+
 const postSchema=new mongoose.Schema({
     userId:{
         type:String,
@@ -20,16 +25,24 @@ const postSchema=new mongoose.Schema({
     },
     category:{
         type:String,
-        default:'uncategorized',
+        default:'technology',
     },
     slug:{
         type:String,
         required:true,
         unique:true,
     },
+    email:{
+        type:String,
+        required:true,
+    },
+    name:{
+        type:String,
+        required:true,
+    }
     
 },{timestamps:true});
 
-const Post=mongoose.models.Post || mongoose.model("Post",postSchema);
+const NewPosts=mongoose.models.NewPosts || mongoose.model("NewPosts",postSchema);
 
-export default Post;
+export default NewPosts;

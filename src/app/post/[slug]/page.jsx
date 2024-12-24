@@ -32,6 +32,10 @@ export default async function page({params}) {
         <span className='text-orange-400'>{post && (post?.content?.length/1000).toFixed(0)} mins read</span>
       </div>
       <div dangerouslySetInnerHTML={{__html:post?.content}} className='w-[100%] lg:w-[70%]'></div>
+      <div className='w-[100%] lg:w-[70%] flex flex-row justify-between'>
+        <p className='underline text-blue-600'>{post.email}</p>
+      <p className='font-bold text-lg'>Posted By: <span className='text-gray-400 italic capitalize'>~~{post.name}</span></p>
+      </div>
       <RecentPosts limit={5}/>
     </div>
   )

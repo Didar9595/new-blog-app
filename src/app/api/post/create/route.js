@@ -1,4 +1,4 @@
-import Post from "@/lib/models/post.model.js";
+import NewPosts from "@/lib/models/post.model.js";
 import { connect } from "@/lib/mongodb/mongoose";
 import { currentUser } from "@clerk/nextjs/server";
 
@@ -13,7 +13,7 @@ export const POST=async(req)=>{
             return new Response("Unauthorized",{status:401});
         }
         const slug=data.title.split(" ").join('-').toLowerCase().replace(/[^a-zA-Z0-9-]/g,'');
-        const newPost=await Post.create({userId:user.publicMetadata.userMongoId,content:data.content,title:data.title,image:data.image,category:data.category,slug});
+        const newPost=await NewPosts.create({userId:user.publicMetadata.userMongoId,content:data.content,title:data.title,image:data.image,category:data.category,slug,email:user.emailAddresses[0].emailAddress,name:user.firstName});
         await newPost.save();
         return new Response(JSON.stringify(newPost),{status:200});
     } catch (error) {
