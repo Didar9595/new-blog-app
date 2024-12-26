@@ -5,7 +5,7 @@ import PostCard from "../components/PostCard"
 import { Button, Select, TextInput } from "flowbite-react"
 
 
-export default function page() {
+export default function Page() {
     const [postData, setPostData] = useState({
         searchTerm: "",
         sort: "desc",
