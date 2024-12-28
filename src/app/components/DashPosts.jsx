@@ -26,14 +26,16 @@ function DashPosts() {
         const data = await res.json();
         console.log("Data",data)
         if (res.ok) {
-          setUserPosts(data.posts)
+          const filteredPosts = data.posts.filter(post => post.userId === user?.publicMetadata?.userMongoId);
+          setUserPosts(filteredPosts);
         }
-        console.log("Posts",userPosts)
       } catch (error) {
         console.log(error)
       }
     }
-    fetchPosts()
+    if(user?.publicMetadata?.userMongoId){
+      fetchPosts()
+    }
   }, [user?.publicMetadata?.userMongoId])
 
   const handleDelete = async() => {
