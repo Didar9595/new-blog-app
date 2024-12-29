@@ -34,7 +34,9 @@ const Header = () => {
     }
   },[searchParams]);
 
- 
+ const handleSearch=()=>{
+  router.push('/search')
+ }
 
 
   return (
@@ -45,7 +47,7 @@ const Header = () => {
       <form onSubmit={handleSubmit}>
         <TextInput type="text" placeholder="Search..." rightIcon={AiOutlineSearch} className="hidden lg:inline" value={searchTerm} onChange={(e)=>setSearchTerm(e.target.value)}/>
       </form>
-      <Button className="w-10 lg:hidden" color="gray" pill><AiOutlineSearch /></Button>
+      <Button className="w-10 lg:hidden" color="gray" pill onClick={handleSearch}><AiOutlineSearch /></Button>
       <div className="flex gap-2 md:order-1">
         <Button className="w-14 flex items-center justify-center" color="gray" pill onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
           {theme === 'light' ? <FaMoon /> : <FaSun />}

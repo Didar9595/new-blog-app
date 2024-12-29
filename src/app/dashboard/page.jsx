@@ -6,10 +6,13 @@ import DashPosts from '../components/DashPosts'
 import DashProfile from '../components/DashProfile'
 import DashUsers from '../components/DashUsers'
 import DashboardComp from '../components/DashboardComp'
+import { Button } from 'flowbite-react'
+import { useRouter } from 'next/navigation'
 
 export default function Dashboard() {
   const searchParams=useSearchParams()
   const [tab,setTab]=useState('')
+ const router=useRouter()
 
   useEffect(()=>{
     const urlParams=new URLSearchParams(searchParams);

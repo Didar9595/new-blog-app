@@ -10,6 +10,7 @@ import { ImProfile } from "react-icons/im";
 import { FaUsers } from "react-icons/fa6";
 import { BsFilePostFill } from "react-icons/bs";
 import { PiSignOutBold } from "react-icons/pi";
+import { IoMdCreate } from "react-icons/io";
 
 function DashSidebar() {
     const [tab, setTab] = useState('')
@@ -56,6 +57,11 @@ function DashSidebar() {
                         </Sidebar.Item>
                     </Link>
                     }
+                    <Link href='/dashboard/create-post'>
+                        <Sidebar.Item  icon={IoMdCreate} as='div'>
+                            Create
+                        </Sidebar.Item>
+                    </Link>
                     <Sidebar.Item className='cursor-pointer' icon={PiSignOutBold}>
                             <SignOutButton/>
                         </Sidebar.Item>
