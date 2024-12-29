@@ -117,6 +117,7 @@ export default function Page() {
                                 ):('Upload')}
                             </Button>
                         </div>
+                        <span className="text-sm text-pink-700 italic">Image size should be less than 2MB</span>
                         {
                             imageUploadError && (
                                 <Alert color="failure" className="my-3">{imageUploadError}</Alert>
