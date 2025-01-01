@@ -98,7 +98,7 @@ export default function DashboardComp() {
         </div>
       </div>
       <div className="mt-4 flex flex-wrap gap-4 justify-center ">
-        <div className="p-3 shadow-lg rounded-md flex flex-col gap-2">
+        <div className="p-3 shadow-lg rounded-md flex flex-col gap-2 max-h-[80vh]  md:max-h-[60vh] overflow-scroll">
           <div className="flex items-center justify-between gap-9">
             <p className="font-bold">Recent Users</p>
             <Button gradientDuoTone="pinkToOrange" outline>See All</Button>
@@ -121,7 +121,7 @@ export default function DashboardComp() {
             }
           </Table>
         </div>
-        <div className="p-3 shadow-lg rounded-md flex flex-col gap-2">
+        <div className="p-3 shadow-lg rounded-md flex flex-col gap-2 max-h-[80vh]  md:max-h-[60vh] overflow-scroll">
           <div className="flex items-center justify-between gap-9">
             <p className="font-bold">Recent Posts</p>
             <Button gradientDuoTone="pinkToOrange" outline>See All</Button>
@@ -135,7 +135,7 @@ export default function DashboardComp() {
             {
               posts && 
               posts.map(post=>(
-                <Table.Body className="divide-y h-[10vh]" key={post._id}>
+                <Table.Body className="divide-y" key={post._id}>
               <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                 <Table.Cell><img src={post.image} alt="profile Pic" className="w-20 rounded-md"/></Table.Cell>
                 <Table.Cell>{post.title}</Table.Cell>
