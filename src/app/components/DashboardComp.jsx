@@ -111,7 +111,7 @@ export default function DashboardComp() {
             {
               users && 
               users.map(user=>(
-                <Table.Body className="divide-y h-[10vh]">
+                <Table.Body className="divide-y h-[10vh]" key={user._id}>
               <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                 <Table.Cell><img src={user.profilePicture} alt="profile Pic" className="w-10 rounded-full"/></Table.Cell>
                 <Table.Cell>{user.username}</Table.Cell>
@@ -135,7 +135,7 @@ export default function DashboardComp() {
             {
               posts && 
               posts.map(post=>(
-                <Table.Body className="divide-y h-[10vh]">
+                <Table.Body className="divide-y h-[10vh]" key={post._id}>
               <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                 <Table.Cell><img src={post.image} alt="profile Pic" className="w-20 rounded-md"/></Table.Cell>
                 <Table.Cell>{post.title}</Table.Cell>
