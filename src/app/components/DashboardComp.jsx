@@ -25,7 +25,7 @@ export default function DashboardComp() {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            limit: 5,
+            limit: 50,
           }),
         });
         const data = await res.json()
@@ -47,7 +47,7 @@ export default function DashboardComp() {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            limit: 5,
+            limit: 50,
           }),
         });
         const data = await res.json()
