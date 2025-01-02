@@ -4,8 +4,8 @@ import Link from "next/link"
 export default function PostCard({post}) {
   return (
       <Card
-      className="w-[20rem] h-[fit-content]"
-      renderImage={() => <img src={post.image} alt="post image" className="w-[full] h-[250px]"/>}
+      className="w-[20rem]"
+      renderImage={() => <img src={post.image} alt="post image" className="w-[full] h-[300px]"/>}
     >
       <h5 className="text-2xl font-bold  text-gray-900 dark:text-white">
         {post.title}

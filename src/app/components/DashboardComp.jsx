@@ -64,7 +64,7 @@ export default function DashboardComp() {
     fetchPosts();
   }, [user])
   return (
-    <div className="w-full p-5">
+    <div className="w-full p-5 dark:text-white">
       <div className="flex flex-wrap gap-5 justify-center items-center">
         <div className="rounded-lg shadow-md p-3">
           <div className="flex flex-row justify-between items-center gap-4">
