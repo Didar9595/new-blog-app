@@ -17,7 +17,7 @@ export default async function page() {
   }
   return (
     <div className="flex flex-col relative">
-      <img src="Main.webp" alt="Hero Image" className="w-[full] h-[500px] md:h-[800px]"/>
+      <img src="hero.jpg" alt="Hero Image" className="w-[full] h-[500px] md:h-[600px]"/>
       <div className="absolute top-10 md:top-32 lg:top-24 left-10 lg:left-48  flex flex-col gap-4">
         <h1 className="font-bold text-[2.5rem] md:text-[3rem] lg:text-[4rem] text-[#fd200b]">Welocome to DA&apos;s BlogSpot</h1>
         <p className="text-gray-800 text-md md:text-2xl  lg:text-3xl font-medium w-[80%]">We&apos;re thrilled to have you here in our little corner of the internet. Whether you&apos;re a seasoned reader or just starting your blogging journey, there&apos;s something for everyone to explore.</p>
